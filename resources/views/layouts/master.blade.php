@@ -54,7 +54,26 @@
               </ul>
             </div>
           </li>
+
+          <li>
+
+
+                                    <a class="" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                     <i class="fa fa-power-off"></i>
+                                                    <span>{{ __('Logout') }}</span>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+
+                            </li>
         </ul>
+
+
+
       </div>
       <!-- sidebar-menu  -->
     </div>

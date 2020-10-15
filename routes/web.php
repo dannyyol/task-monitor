@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
+Auth::routes();
 
-Route::get('/admin', "HomeController@index")->name("index");
-Route::get('{path}', "HomeController@index")->where('path', '[\/\w\.-]*');
+
+Route::group(['prefix'=>'admin', 'middleware'=>['admin']], function(){
+    Route::get("", "HomeController@index")->name("index");
+    Route::get('{path}', "HomeController@index")->where('path', '[\/\w\.-]*');
+});
