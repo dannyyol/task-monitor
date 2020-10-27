@@ -2,12 +2,12 @@
 @section('content')
 <br><br><br><br>
 
-{{-- <style>
+ <style>
     .table-sortable tbody tr {
     cursor: move;
 }
 
-</style> --}}
+</style> 
 <div class="container">
 <router-view></router-view>
 </div>
